@@ -2,7 +2,7 @@ repos:
   - repo: local
     hooks:
       - id: convert-to-png
-        name: Convert non PNG images to PNG
+        name: Convert all images to png
         entry: .hooks/convert-to-png.sh
         language: script
         files: \.(jpe?g|JPE?G|tiff?|bmp|ico|webp)$
@@ -11,5 +11,6 @@ repos:
     rev: v9.1.5
     hooks:
       - id: oxipng
+        name: Optimize memory footprint of png images
         args: ["-o", "max", "--strip", "safe", "--alpha"]
         files: \.png$
