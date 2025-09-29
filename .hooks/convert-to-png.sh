@@ -13,6 +13,7 @@ for file in "$@"; do
   if [ $? -eq 0 ]; then
     # Remove original file
     git rm "$file"
+    rm "$file"
     # Add the new PNG file to staging area
     git add "$new_file"
   else
